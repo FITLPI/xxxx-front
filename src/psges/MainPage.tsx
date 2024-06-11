@@ -6,6 +6,7 @@ const MainPage = () => {
   );
   return (
     <div>
+      <h1>Ваш токен</h1>
       <h1>{accessToken}</h1>
     </div>
   );
