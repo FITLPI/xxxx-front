@@ -26,3 +26,9 @@ export type YandexIdResponse = {
   };
   psuid: string;
 };
+
+export type PropsSide = {
+  x: string;
+  y: string;
+  background: string;
+};
