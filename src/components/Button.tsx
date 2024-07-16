@@ -29,8 +29,8 @@ const Button = ({
     <>
       <RoundedDiv
         background={background || yellow}
-        width={width || "120px"}
-        height={height || "70px"}
+        width={width || "100px"}
+        height={height || "60px"}
         margin={margin || `0px ${Boolean(isAccent) ? "20px" : "40px"} 0px 40px`}
         padding={padding}
         borderRadius={borderRadius || "20px"}

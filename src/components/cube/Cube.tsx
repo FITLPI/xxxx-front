@@ -1,13 +1,13 @@
 import { useState } from "react";
-import Side from "./Side/Side";
+import Side from "./side/Side";
 import RoundedDiv from "../RoundedDiv";
-import { greySimple } from "../../assets/colors";
-import { propsSide } from "../../share/helpers";
+import { defaultColorCube, greySimple } from "../../assets/colors";
+import { degreeSide } from "../../share/helpers";
 
 const Cube = () => {
   const [isRotate, setIsRotate] = useState<Boolean>(false);
-  const [axisX, setAxisX] = useState<number>(0);
-  const [axisY, setAxisY] = useState<number>(0);
+  const [axisX, setAxisX] = useState<number>(45);
+  const [axisY, setAxisY] = useState<number>(-45);
   const [zIndex, setZIndex] = useState<number>(-1);
   const [mouseMoveX, setMouseMoveX] = useState<number>(0);
   const [mouseMoveY, setMouseMoveY] = useState<number>(0);
@@ -17,7 +17,7 @@ const Cube = () => {
   return (
     <RoundedDiv
       width="80vw"
-      height="60vh"
+      height="65vh"
       background={greySimple}
       isBorder={true}
       onMouseDown={() => {
@@ -57,8 +57,8 @@ const Cube = () => {
         style={{
           position: "absolute",
           width: "100%",
-          height: "108%",
-          opacity: "0",
+          height: "100%",
+          opacity: "0.0",
           zIndex: zIndex,
         }}
       ></div>
@@ -68,14 +68,15 @@ const Cube = () => {
         x={`${axisY}`}
         y={`${axisX}`}
       >
-        {propsSide.map(({ x, y, background }) => (
+        {degreeSide.map(({ x, y }, iter) => (
           <Side
             isMesh={true}
             sizeDefualt={sizeDefualt}
             z={halfSize}
             x={x}
             y={y}
-            backgroundSegment={background}
+            backgroundSegment={defaultColorCube[iter]}
+            key={iter + ""}
           />
         ))}
       </Side>

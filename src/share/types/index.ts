@@ -27,8 +27,12 @@ export type YandexIdResponse = {
   psuid: string;
 };
 
-export type PropsSide = {
+export type DegreeSide = {
   x: string;
   y: string;
-  background: string;
+};
+
+export type Viewport = {
+  width: number;
+  height: number;
 };

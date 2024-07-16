@@ -23,9 +23,10 @@ const Mesh = ({ size, background }: IMesh) => {
 
   return (
     <div>
-      {arrayMargin.map((margin) => (
+      {arrayMargin.map((margin, key) => (
         <Side
-          isMain={true}
+          key={key + ""}
+          isSegment={true}
           width={sizeSigment + "vh"}
           height={sizeSigment + "vh"}
           margin={margin}

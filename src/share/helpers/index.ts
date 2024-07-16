@@ -1,4 +1,4 @@
-import { PropsSide, YandexIdResponse } from "../types";
+import { DegreeSide, Viewport, YandexIdResponse } from "../types";
 
 const defaultString = "default";
 const defaultId = -1;
@@ -37,35 +37,37 @@ export const getUtils = (value: string): string => {
   return utils;
 };
 
-export const propsSide: Array<PropsSide> = [
+export const degreeSide: Array<DegreeSide> = [
   {
     y: "0",
     x: "0",
-    background: "white",
   },
   {
     y: "-90",
     x: "0",
-    background: "blue",
   },
   {
     y: "-180",
     x: "0",
-    background: "yellow",
   },
   {
     y: "-270",
     x: "0",
-    background: "green",
   },
   {
     y: "0",
     x: "90",
-    background: "red",
   },
   {
     y: "0",
     x: "-90",
-    background: "orange",
   },
 ];
+
+export const getWindowDimensions = (): Viewport => {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+};

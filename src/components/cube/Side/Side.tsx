@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useState } from "react";
 import Mesh from "./Mesh";
 
 interface ISide {
@@ -21,6 +21,7 @@ interface ISide {
 const Side = ({
   isMain,
   isMesh,
+  isSegment,
   width,
   height,
   background,
@@ -48,8 +49,14 @@ const Side = ({
     outline: outline || "none",
   };
 
+  const onClickSegment = () => {
+    isSegment && console.log("click on segment");
+  };
+
+  const [isActive, setIsActive] = useState<boolean>(false);
+
   return (
-    <div style={style}>
+    <div style={style} onMouseDown={onClickSegment}>
       {isMain && children}
       {isMesh && (
         <Mesh

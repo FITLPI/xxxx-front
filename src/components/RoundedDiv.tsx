@@ -47,7 +47,7 @@ const RoundedDiv = ({
       style={{
         background: (!isBorder && background) || "none",
         width: width || "90vw",
-        height: height || "80vh",
+        height: height || "86vh",
         borderRadius: borderRadius || "5vh",
         margin: margin || "0px",
         padding: padding || "0px",

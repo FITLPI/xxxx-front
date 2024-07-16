@@ -1,33 +1,52 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import Center from "../components/Center";
 import { useAppSelector } from "../share/hooks/useAppSelector";
 import Carousel from "../widgets/Carousel";
-import { blackLight, orange, whiteSecond } from "../assets/colors";
+import {
+  blackLight,
+  orange,
+  whiteSecond,
+  yellow,
+  yellowText,
+} from "../assets/colors";
 import RoundedDiv from "../components/RoundedDiv";
 import Button from "../components/Button";
 import Cube from "../components/cube/Cube";
+import { useViewportSize } from "../share/hooks/useViewportSize";
+import ColorSelection from "../components/cube/colors/ColorSelection";
 
 const MainPage = () => {
   const yandexIdInfo = useAppSelector((state) => state.yndexIdInfo.yndexIdInfo);
+  const [isShow, setIsShow] = useState<boolean>(true);
+  const viewport = useViewportSize();
+
+  useEffect(
+    () => setIsShow(!(viewport.height < 560 || viewport.height < 560)),
+    [viewport]
+  );
 
   return (
     <Carousel vertical={true}>
       <Center height="90vh" display="grid">
         <RoundedDiv background={whiteSecond} padding="2vh 0px">
           <Center display="grid">
+            <ColorSelection />
             <div style={styleDiv}>
               <h1 style={styleH1}>
                 Здравствуй{" "}
                 <span style={styleSpan}>{yandexIdInfo.first_name}</span>
               </h1>
             </div>
-            <div style={styleDiv}>
-              <Cube />
-            </div>
+            {isShow && (
+              <div style={styleDiv}>
+                <Cube />
+              </div>
+            )}
             <div style={styleDiv}>
               <h2>
                 Ты готов{yandexIdInfo.sex !== "male" && "а"} впустить{" "}
-                <span style={styleSpan}>Алису</span> в свое устройство ?
+                <span style={styleSpan}>Алису</span>{" "}
+                {isShow ? " в свое устройство " : ""} ?
               </h2>
             </div>
             <div
@@ -39,7 +58,7 @@ const MainPage = () => {
               }}
             >
               <Button onClick={() => console.log("click")}>Нет</Button>
-              <Button onClick={() => console.log("click")} isAccent={true}>
+              <Button onClick={() => console.log("click")} isAccent={isShow}>
                 Да
               </Button>
             </div>
@@ -53,7 +72,7 @@ const MainPage = () => {
 export default MainPage;
 
 const styleSpan: CSSProperties = {
-  color: orange,
+  color: yellowText,
 };
 
 const styleH1: CSSProperties = {
