@@ -7,9 +7,7 @@ import { updateInfo } from "../store/YandexIDSlice";
 
 export const useYandexIdInfo = (): void => {
   const dispatch = useAppDispatch();
-  const accessToken = useAppSelector(
-    (state: any) => state.accessToken.accessToken
-  );
+  const accessToken = useAppSelector((state) => state.accessToken.accessToken);
 
   const getData = async (): Promise<void> => {
     const url = import.meta.env.VITE_REACT_YANDEX_ID_URL;

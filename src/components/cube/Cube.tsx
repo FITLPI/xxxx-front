@@ -1,14 +1,15 @@
 import { useState } from "react";
-import Side from "./side/Side";
 import RoundedDiv from "../RoundedDiv";
 import { defaultColorCube, greySimple } from "../../assets/colors";
 import { degreeSide } from "../../share/helpers";
+import Side from "./Side/Side";
+import ColorSelection from "./colors/ColorSelection";
 
 const Cube = () => {
-  const [isRotate, setIsRotate] = useState<Boolean>(false);
+  const [isRotate, setIsRotate] = useState<boolean>(false);
   const [axisX, setAxisX] = useState<number>(45);
   const [axisY, setAxisY] = useState<number>(-45);
-  const [zIndex, setZIndex] = useState<number>(-1);
+  const [zIndex, setZIndex] = useState<number>(-3);
   const [mouseMoveX, setMouseMoveX] = useState<number>(0);
   const [mouseMoveY, setMouseMoveY] = useState<number>(0);
   const sizeDefualt = "36vh";
@@ -21,11 +22,12 @@ const Cube = () => {
       background={greySimple}
       isBorder={true}
       onMouseDown={() => {
-        setIsRotate(true);
-        setZIndex(5);
+        // setIsRotate(true);
+        // setZIndex(5);
+        console.log("ASDSA");
       }}
     >
-      <div
+      {/* <div
         onMouseMove={(data) => {
           if (isRotate) {
             setAxisX((prev) => {
@@ -48,21 +50,28 @@ const Cube = () => {
         }}
         onMouseUp={() => {
           setIsRotate(false);
-          setZIndex(-2);
+          setZIndex(-3);
         }}
         onMouseLeave={() => {
           if (zIndex > 0) setIsRotate(false);
-          setZIndex(-2);
+          setZIndex(-3);
         }}
         style={{
           position: "absolute",
-          width: "100%",
-          height: "100%",
-          opacity: "0.0",
+          top: "5vh",
+          width: "100vw",
+          height: "90vh",
+          opacity: "0.6",
           zIndex: zIndex,
         }}
+      ></div> */}
+      <ColorSelection />
+      <div
+        onMouseDown={() => console.log("dsadass")}
+        style={{ width: "100px", height: "100px", background: "green" }}
       ></div>
-      <Side
+      <button onClick={() => console.log(" fdssf")}>dsadas</button>
+      {/* <Side
         sizeDefualt={sizeDefualt}
         isMain={true}
         x={`${axisY}`}
@@ -79,7 +88,7 @@ const Cube = () => {
             key={iter + ""}
           />
         ))}
-      </Side>
+      </Side> */}
     </RoundedDiv>
   );
 };

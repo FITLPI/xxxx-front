@@ -11,8 +11,8 @@ const ColorSelection = () => {
       onMouseLeave={() => setWidth("6vh")}
       style={{
         position: "absolute",
-        left: "11vw",
-        top: "15vh",
+        left: "12vw",
+        top: "17vh",
         width: width,
         height: "6vh",
         borderRadius: "3vh",

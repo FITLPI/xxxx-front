@@ -28,15 +28,11 @@ const RoundedDiv = ({
   isBorder,
   onMouseDown,
 }: IRoundedDiv) => {
-  // const res = test;
-
-  // console.log(res);
-
   const autoCulcMax = (value: string, coef: number): string => {
     const result = coef * parseInt(value);
     const units = value
       .split("")
-      .filter((char) => !Boolean(parseInt(char)))
+      .filter((char) => !parseInt(char))
       .join("");
     return result + units;
   };

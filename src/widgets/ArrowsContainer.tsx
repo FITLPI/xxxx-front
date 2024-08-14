@@ -1,4 +1,4 @@
-import React, { CSSProperties, useRef, useState } from "react";
+import React, { useRef } from "react";
 import ArrowWithDirection from "../components/ArrowWithDirection";
 import Center from "../components/Center";
 import DisplayByHover from "../components/DisplayByHover";
