@@ -1,8 +1,10 @@
 import React, { CSSProperties } from "react";
 import Mesh from "./Mesh";
+import "./style.css";
 
 interface ISide {
   sizeDefualt: string;
+  data?: string;
   isMain?: boolean;
   isMesh?: boolean;
   isSegment?: boolean;
@@ -16,12 +18,14 @@ interface ISide {
   margin?: string;
   outline?: string;
   backgroundSegment?: string;
+  rotations?: boolean;
+  onClickSegment?: (data: string) => void;
+  anyStyle?: CSSProperties;
 }
 
 const Side = ({
   isMain,
   isMesh,
-  isSegment,
   width,
   height,
   background,
@@ -33,6 +37,10 @@ const Side = ({
   margin,
   outline,
   sizeDefualt,
+  rotations,
+  anyStyle,
+  data,
+  onClickSegment,
 }: ISide) => {
   const transform = `rotateX(${x || 0}deg) rotateY(${y || 0}deg) translateZ(${
     z || "0px"
@@ -48,14 +56,16 @@ const Side = ({
     margin: margin || "0px",
     outline: outline || "none",
     zIndex: "2",
-  };
-
-  const onClickSegment = () => {
-    isSegment && console.log("click on segment and my color " + background);
+    transition: "1s",
+    ...anyStyle,
   };
 
   return (
-    <div style={style} onMouseDown={onClickSegment}>
+    <div
+      className={rotations ? "spin" : undefined}
+      onClick={() => onClickSegment && onClickSegment(data ?? "")}
+      style={style}
+    >
       {isMain && children}
       {isMesh && (
         <Mesh

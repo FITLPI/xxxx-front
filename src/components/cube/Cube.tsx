@@ -1,19 +1,41 @@
-import { useState } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 import RoundedDiv from "../RoundedDiv";
 import { defaultColorCube, greySimple } from "../../assets/colors";
 import { degreeSide } from "../../share/helpers";
 import Side from "./Side/Side";
-import ColorSelection from "./colors/ColorSelection";
 
 const Cube = () => {
   const [isRotate, setIsRotate] = useState<boolean>(false);
+  const [rotations, setRotations] = useState<boolean>(false);
+  const [anyStyle, setAnyStyle] = useState<CSSProperties>();
+
   const [axisX, setAxisX] = useState<number>(45);
   const [axisY, setAxisY] = useState<number>(-45);
   const [zIndex, setZIndex] = useState<number>(-3);
   const [mouseMoveX, setMouseMoveX] = useState<number>(0);
   const [mouseMoveY, setMouseMoveY] = useState<number>(0);
+  const timeoutToRotate = useRef<NodeJS.Timeout>();
+  const timeoutToOnStart = useRef<NodeJS.Timeout>();
+
   const sizeDefualt = "36vh";
   const halfSize = parseInt(sizeDefualt) / 2 + "vh";
+
+  useEffect(() => {
+    if (isRotate == false) {
+      timeoutToOnStart.current = setTimeout(() => {
+        setAxisX(0);
+        setAxisY(0);
+        setAnyStyle({
+          transition: "1s",
+        });
+      }, 11000);
+
+      timeoutToRotate.current = setTimeout(() => setRotations(true), 12000);
+    } else {
+      clearTimeout(timeoutToRotate.current);
+      clearTimeout(timeoutToOnStart.current);
+    }
+  }, [isRotate]);
 
   return (
     <RoundedDiv
@@ -21,13 +43,20 @@ const Cube = () => {
       height="65vh"
       background={greySimple}
       isBorder={true}
-      onMouseDown={() => {
-        // setIsRotate(true);
-        // setZIndex(5);
-        console.log("ASDSA");
-      }}
     >
-      {/* <div
+      <RoundedDiv
+        onMouseDown={() => {
+          setIsRotate(true);
+          setZIndex(5);
+          setRotations(false);
+          setAnyStyle({
+            transition: "none",
+          });
+        }}
+        width="80vw"
+        height="65vh"
+      ></RoundedDiv>
+      <div
         onMouseMove={(data) => {
           if (isRotate) {
             setAxisX((prev) => {
@@ -64,18 +93,15 @@ const Cube = () => {
           opacity: "0.6",
           zIndex: zIndex,
         }}
-      ></div> */}
-      <ColorSelection />
-      <div
-        onMouseDown={() => console.log("dsadass")}
-        style={{ width: "100px", height: "100px", background: "green" }}
       ></div>
-      <button onClick={() => console.log(" fdssf")}>dsadas</button>
-      {/* <Side
+      {/* <ColorSelection /> */}
+      <Side
         sizeDefualt={sizeDefualt}
         isMain={true}
         x={`${axisY}`}
         y={`${axisX}`}
+        rotations={rotations}
+        anyStyle={anyStyle}
       >
         {degreeSide.map(({ x, y }, iter) => (
           <Side
@@ -85,10 +111,10 @@ const Cube = () => {
             x={x}
             y={y}
             backgroundSegment={defaultColorCube[iter]}
-            key={iter + ""}
+            key={iter}
           />
         ))}
-      </Side> */}
+      </Side>
     </RoundedDiv>
   );
 };
