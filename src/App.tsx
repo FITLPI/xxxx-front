@@ -1,7 +1,6 @@
-import MainPage from "./psges/MainPage";
+import MainPage from "./pages/MainPage";
 import { useAttachAccessToken } from "./share/hooks/useAttachAccessToken";
 import { useYandexIdInfo } from "./share/hooks/useYandexIdInfo";
-import Carousel from "./widgets/Carousel";
 import "./App.css";
 
 function App() {

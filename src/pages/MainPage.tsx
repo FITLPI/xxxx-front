@@ -2,18 +2,11 @@ import { CSSProperties, useEffect, useState } from "react";
 import Center from "../components/Center";
 import { useAppSelector } from "../share/hooks/useAppSelector";
 import Carousel from "../widgets/Carousel";
-import {
-  blackLight,
-  orange,
-  whiteSecond,
-  yellow,
-  yellowText,
-} from "../assets/colors";
+import { blackLight, whiteSecond, yellowText } from "../assets/colors";
 import RoundedDiv from "../components/RoundedDiv";
 import Button from "../components/Button";
-import Cube from "../components/cube/Cube";
 import { useViewportSize } from "../share/hooks/useViewportSize";
-import ColorSelection from "../components/cube/colors/ColorSelection";
+import RubiksCube from "../widgets/RubiksCube";
 
 const MainPage = () => {
   const yandexIdInfo = useAppSelector((state) => state.yndexIdInfo.yndexIdInfo);
@@ -30,7 +23,6 @@ const MainPage = () => {
       <Center height="90vh" display="grid">
         <RoundedDiv background={whiteSecond} padding="2vh 0px">
           <Center display="grid">
-            <ColorSelection />
             <div style={styleDiv}>
               <h1 style={styleH1}>
                 Здравствуй{" "}
@@ -38,8 +30,13 @@ const MainPage = () => {
               </h1>
             </div>
             {isShow && (
-              <div style={styleDiv}>
-                <Cube />
+              <div
+                style={{
+                  ...styleDiv,
+                  height: "60vh",
+                }}
+              >
+                <RubiksCube />
               </div>
             )}
             <div style={styleDiv}>
@@ -80,6 +77,5 @@ const styleH1: CSSProperties = {
 };
 
 const styleDiv: CSSProperties = {
-  background: "none",
   margin: "auto",
 };

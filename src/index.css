@@ -9,12 +9,13 @@
   border: none;
   font-weight: normal;
   user-select: none;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 button {
   cursor: pointer;
 }
-div {
-  background-color: #ffffff;
+
+body {
+  overflow: hidden;
 }
