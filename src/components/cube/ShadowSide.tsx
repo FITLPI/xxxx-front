@@ -16,7 +16,7 @@ const ShadowSide = ({ k, isEnable, blockAnimate, actions }: IShadowSide) => {
         background: "rgba(25, 25, 25, 0.0)",
         transform: `translate3d(0, 0, calc(${
           k % 2 ? "3" : "-3"
-        }.001 * var(--sixth-size))) rotateY(${k % 2 ? "0" : "180"}deg)`,
+        }.003 * var(--sixth-size))) rotateY(${k % 2 ? "0" : "180"}deg)`,
         width: "var(--thrid-size)",
         height: "var(--thrid-size)",
       }}
