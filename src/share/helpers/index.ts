@@ -1,4 +1,4 @@
-import { DegreeSide, Viewport, YandexIdResponse } from "../types";
+import { Viewport, YandexIdResponse } from "../types";
 
 const defaultString = "default";
 const defaultId = -1;
@@ -36,33 +36,6 @@ export const getUtils = (value: string): string => {
     .join("");
   return utils;
 };
-
-export const degreeSide: Array<DegreeSide> = [
-  {
-    y: "0",
-    x: "0",
-  },
-  {
-    y: "-90",
-    x: "0",
-  },
-  {
-    y: "-180",
-    x: "0",
-  },
-  {
-    y: "-270",
-    x: "0",
-  },
-  {
-    y: "0",
-    x: "90",
-  },
-  {
-    y: "0",
-    x: "-90",
-  },
-];
 
 export const getWindowDimensions = (): Viewport => {
   const { innerWidth: width, innerHeight: height } = window;

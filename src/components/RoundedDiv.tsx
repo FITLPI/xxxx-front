@@ -13,6 +13,7 @@ interface IRoundedDiv {
   maxWidth?: string;
   isBorder?: true;
   onMouseDown?: () => void;
+  onWheel?: (_data: any) => void;
 }
 
 const RoundedDiv = ({
@@ -27,6 +28,7 @@ const RoundedDiv = ({
   maxWidth,
   isBorder,
   onMouseDown,
+  onWheel,
 }: IRoundedDiv) => {
   const autoCulcMax = (value: string, coef: number): string => {
     const result = coef * parseInt(value);
@@ -39,6 +41,7 @@ const RoundedDiv = ({
 
   return (
     <div
+      onWheel={onWheel}
       onMouseDown={onMouseDown}
       style={{
         background: (!isBorder && background) || "none",

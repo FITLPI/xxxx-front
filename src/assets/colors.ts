@@ -10,7 +10,7 @@ export const greySimple = "#757575";
 export const whiteText = "#f4f4f4";
 export const whiteSecond = "#f6f5f3";
 
-export const defaultColorCube: Array<string> = [
+export const COLORS: Array<string> = [
   "white",
   "blue",
   "yellow",
