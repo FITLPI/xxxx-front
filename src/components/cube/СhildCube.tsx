@@ -41,7 +41,6 @@ export const СhildCube = ({ cell }: IСhildCube) => {
               key={10 * cell.id + iter}
               isBlack={isBalck}
               style={{ background: color, opacity: "1" }}
-              //children={`${cell.initialX};${cell.initialY};${cell.initialZ}`}
             />
           );
         })}
