@@ -1,8 +1,7 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
-import RoundedDiv from "../RoundedDiv";
-import { defaultColorCube, greySimple } from "../../assets/colors";
-import { degreeSide } from "../../share/helpers";
-import Side from "./Side/Side";
+import RoundedDiv from "../src/components/RoundedDiv";
+import { greySimple } from "../src/assets/colors";
+import Side from "./colors/Side/Side";
 
 const Cube = () => {
   const [isRotate, setIsRotate] = useState<boolean>(false);
@@ -103,7 +102,7 @@ const Cube = () => {
         rotations={rotations}
         anyStyle={anyStyle}
       >
-        {degreeSide.map(({ x, y }, iter) => (
+        {/* {degreeSide.map(({ x, y }, iter) => (
           <Side
             isMesh={true}
             sizeDefualt={sizeDefualt}
@@ -113,7 +112,7 @@ const Cube = () => {
             backgroundSegment={defaultColorCube[iter]}
             key={iter}
           />
-        ))}
+        ))} */}
       </Side>
     </RoundedDiv>
   );

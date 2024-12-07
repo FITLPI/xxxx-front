@@ -5,8 +5,8 @@ import Carousel from "../widgets/Carousel";
 import { blackLight, whiteSecond, yellowText } from "../assets/colors";
 import RoundedDiv from "../components/RoundedDiv";
 import Button from "../components/Button";
-import Cube from "../components/cube/Cube";
 import { useViewportSize } from "../share/hooks/useViewportSize";
+import RubiksCube from "../widgets/RubiksCube";
 
 const MainPage = () => {
   const yandexIdInfo = useAppSelector((state) => state.yndexIdInfo.yndexIdInfo);
@@ -31,7 +31,7 @@ const MainPage = () => {
             </div>
             {isShow && (
               <div style={styleDiv}>
-                <Cube />
+                <RubiksCube />
               </div>
             )}
             <div style={styleDiv}>
