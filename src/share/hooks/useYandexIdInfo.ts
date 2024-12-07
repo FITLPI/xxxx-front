@@ -3,7 +3,8 @@ import axios from "axios";
 import { YandexIdResponse } from "../types";
 import { useEffect } from "react";
 import { useAppDispatch } from "./useAppDispatch";
-import { updateInfo } from "../store/yandexIDSlice";
+import { updateInfo } from "../store/YandexIDSlice";
+// import { updateInfo } from "../store/yandexIDSlice";
 
 export const useYandexIdInfo = (): void => {
   const dispatch = useAppDispatch();

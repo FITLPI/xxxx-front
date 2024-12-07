@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import accessTokenSlice from "./accessTokenSlice";
-import yandexIdSlice from "./yandexIDSlice";
+import yandexIdSlice from "./YandexIDSlice";
 import coordinatesSlice from "./coordinatesSlice";
 
 const store = configureStore({
