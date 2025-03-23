@@ -1,4 +1,4 @@
-[![Watch the video](https://disk.yandex.ru/i/smgItGIg6KztKQ)]([https://www.youtube.com/watch?v=_5tFXJQIzi4](https://disk.yandex.ru/i/9dA_8B_ApWR7wg))
+[![Watch the video](https://downloader.disk.yandex.ru/preview/9fd5bba84a359710d4c6d1fe557dfe3840dbc3e19bf254d0dc8cfff827a50d3d/67e08b32/BwW97tCoGsMNW-8njDzDtNZ_pCNlQev28mpTbrC6HdL22EN32ufSXSvhETWk27GehoXeTRPtrcAucXZVdmHQhA%3D%3D?uid=0&filename=CubePreview.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048)]([https://www.youtube.com/watch?v=_5tFXJQIzi4](https://disk.yandex.ru/i/9dA_8B_ApWR7wg))
 
 # React + TypeScript + Vite
 
