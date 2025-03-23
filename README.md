@@ -1,4 +1,7 @@
-[![Watch the video](https://downloader.disk.yandex.ru/preview/9fd5bba84a359710d4c6d1fe557dfe3840dbc3e19bf254d0dc8cfff827a50d3d/67e08b32/BwW97tCoGsMNW-8njDzDtNZ_pCNlQev28mpTbrC6HdL22EN32ufSXSvhETWk27GehoXeTRPtrcAucXZVdmHQhA%3D%3D?uid=0&filename=CubePreview.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048)]([https://www.youtube.com/watch?v=_5tFXJQIzi4](https://disk.yandex.ru/i/9dA_8B_ApWR7wg))
+![CubePreview](https://github.com/user-attachments/assets/b4401b12-0b3c-4b85-b581-ea3bbf794f7f)
+
+https://github.com/user-attachments/assets/895176e6-d1bf-4e9b-aa79-ded29728d0b1
+
 
 # React + TypeScript + Vite
 
@@ -30,3 +33,4 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
